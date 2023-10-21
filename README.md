@@ -17,6 +17,8 @@ Hardware hierfür ist:
 5. weiche Feder Durchmesser 8mm
 6. Alufolie
 
+![Servo-Switch](https://github.com/ossilampe/Pinout/blob/master/Esp/esp8266-pinout_01.png)
+
 Printables für die Druckteile
 https://www.printables.com/de/model/621586-homeassistant-servo-switch
  
