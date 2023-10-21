@@ -21,5 +21,3 @@ Hardware hierfür ist:
 Diskussion zu WP
 
 https://www.heizungsforum.de/threads/waermepumpe-buderus-wpt200-4-as-informationen-zur-pv-unterstuetzung.24083/
-
-Tags
