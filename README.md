@@ -16,6 +16,9 @@ Hardware hierfür ist:
 4. Diverse Druckteile
 5. weiche Feder Durchmesser 8mm
 6. Alufolie
+
+Printables für die Druckteile
+https://www.printables.com/de/model/621586-homeassistant-servo-switch
  
 
 Diskussion zu WP
