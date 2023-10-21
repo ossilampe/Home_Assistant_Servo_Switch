@@ -1,0 +1,103 @@
+substitutions:
+  device: servo_esphome # Set to desired device name in ESPHome
+  switch_name: "WP_servo_switch" # Set to desired name in Home Assistant
+  up_position: -55% # Taststellung
+  down_position: 20% # Parkstellung
+  center_position: 20% 
+  fequenz: 40 Hz # Geschwindigkeit
+
+
+esphome:
+  name: wp-servo
+  friendly_name: wp_servo
+
+esp8266:
+  board: d1_mini
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "Cp+fGYuz0auxW2m/T+E/obLGdkR0QgNG7Gv7uocKgFY="
+ota:
+  password: "11c6467f5cac6c39be9b7a8adf5c370b"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  manual_ip:
+    static_ip: 192.168.178.64
+    gateway: 192.168.178.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Wp-Servo Fallback Hotspot"
+    password: "9BRl0VYbAkK4"
+
+captive_portal:
+
+light:
+  - platform: monochromatic
+    output: output_red
+    id: red_led
+
+output:
+  - platform: esp8266_pwm
+    id: pwm_output
+    pin:
+      number: D1
+    frequency: ${fequenz}
+
+  - platform: esp8266_pwm
+    id: output_red
+    pin:
+      number: D2
+
+
+servo:
+  - id: my_servo
+    output: pwm_output
+
+
+switch:
+  - platform: template
+    name: ${switch_name} 
+    optimistic: false
+    turn_on_action:
+      - script.execute: move_up
+    turn_off_action:
+      - script.execute: move_down
+      
+script:
+  - id: move_up
+    then: 
+      - light.turn_on: red_led
+      - delay: 2s
+      - servo.write:
+          id: my_servo
+          level: ${up_position}
+      - delay: 1s
+      - servo.write:
+          id: my_servo
+          level: ${down_position}
+      - delay: 2s
+      - servo.detach: my_servo
+      - light.turn_off: red_led
+
+  - id: move_down
+    then: 
+      
+      - delay: 2s
+      - servo.write:
+          id: my_servo
+          level: ${up_position}
+      - delay: 1s
+      - servo.write:
+          id: my_servo
+          level: ${down_position}
+      - delay: 2s
+      - servo.detach: my_servo
+      - light.turn_off: red_led    
