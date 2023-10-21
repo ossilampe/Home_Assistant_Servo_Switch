@@ -17,7 +17,7 @@ Hardware hierfür ist:
 5. weiche Feder Durchmesser 8mm
 6. Alufolie
 
-![Servo-Switch](https://github.com/ossilampe/Home_Assistant_Servo_Switch/blob/main/20231021_113425.jpg?raw=true)
+![Servo-Switch](https://raw.githubusercontent.com/ossilampe/Home_Assistant_Servo_Switch/main/20231021_113425.jpg)
 
 Printables für die Druckteile
 https://www.printables.com/de/model/621586-homeassistant-servo-switch
