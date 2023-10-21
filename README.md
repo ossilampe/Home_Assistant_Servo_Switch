@@ -14,3 +14,5 @@ Hardware hierfür ist:
 2. 1x Micro Servo
 3. 2x LED 3mm
 4. Diverse Druckteile
+5. weiche Feder Durchmesser 8mm
+6. Alufolie
