@@ -19,6 +19,8 @@ Hardware hierfür ist:
 
 ![Servo-Switch](https://raw.githubusercontent.com/ossilampe/Home_Assistant_Servo_Switch/main/20231021_113425.jpg)
 
+![Servo-Switch](https://raw.githubusercontent.com/ossilampe/Home_Assistant_Servo_Switch/main/20231021_113425.jpg)
+
 Printables für die Druckteile
 https://www.printables.com/de/model/621586-homeassistant-servo-switch
  
